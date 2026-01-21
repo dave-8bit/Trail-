@@ -1,18 +1,18 @@
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
+import SimulationSection from '../components/SimulationSection';
 
 const Home = () => {
   return (
-    /* The outer wrapper handles the full-width background color */
-    <div className="w-full bg-[#0b0b0b] min-h-screen">
-      
-      {/* The inner container constraints the width to your Figma spec (approx 1455px) */}
-      <div className="mx-auto max-w-[1455px] w-full relative">
+    <main className="w-full bg-[#0b0b0b] overflow-x-hidden min-h-screen">
+      {/* Global Width Constraint */}
+      <div className="mx-auto max-w-[1455px] flex flex-col">
         <Navigation />
         <HeroSection />
+        {/* This will now render as 1455px width by 1625px height */}
+        <SimulationSection />
       </div>
-
-    </div>
+    </main>
   );
 };
 
