@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@keyframes cardEntrance {
+  0% { 
+    transform: rotate(0deg) translateY(0px) translateX(0px); 
+    opacity: 0; 
+    filter: blur(10px);
+  }
+  100% { 
+    opacity: 1; 
+    filter: blur(0px);
+  }
+}
+
+.hero-card {
+  animation: cardEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 640px) {
+  .mobile-h1 {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .hero-arrow {
+    display: none !important;
+  }
+
+  .hero-cards-container {
+    width: 180px !important;
+    height: 180px !important;
+    margin-top: -1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .hero-card {
+    height: 120px !important;
+    border-radius: 14px !important;
+  }
+  
+  .hero-button {
+    display: none !important;
+  }
+
+  .hero-small {
+    width: 90px !important;
+    height: 90px !important;
+  }
+}
