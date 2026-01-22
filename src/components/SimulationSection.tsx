@@ -37,7 +37,7 @@ const SimulationSection: React.FC = () => {
           className="text-white uppercase font-black text-center"
           style={{ 
             fontFamily: "'Bauer Neue', sans-serif",
-            fontSize: "clamp(28px, 8vw, 64px)", 
+            fontSize: "clamp(24px, 3vw, 52px)", 
             lineHeight: "1.1", 
             letterSpacing: "0%", 
             margin: "0"

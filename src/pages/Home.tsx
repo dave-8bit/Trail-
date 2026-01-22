@@ -1,6 +1,7 @@
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import SimulationSection from '../components/SimulationSection';
+import MembersSeeSection from '../components/MembersSeeSection'; // Import the new section
 
 const Home = () => {
   return (
@@ -9,8 +10,10 @@ const Home = () => {
       <div className="mx-auto max-w-[1455px] flex flex-col">
         <Navigation />
         <HeroSection />
-        {/* This will now render as 1455px width by 1625px height */}
+        {/* Rendered as 1455px width by 1625px height */}
         <SimulationSection />
+        {/* Rendered as 1455px width by 973px height */}
+        <MembersSeeSection />
       </div>
     </main>
   );
