@@ -10,8 +10,8 @@ const InfluenceSection: React.FC = () => {
   const accent = "#B4FF2C";
 
   const tabAssets: Record<TabType, string> = {
-    "Partners": partnersImg,
-    "Creators": creatorsImg,
+    Partners: partnersImg,
+    Creators: creatorsImg,
     "Club Wars": clubWarsImg,
   };
 
@@ -37,7 +37,8 @@ const InfluenceSection: React.FC = () => {
             style={{
               backgroundColor: activeTab === tab ? accent : "transparent",
               color: activeTab === tab ? "#000" : "#fff",
-              borderColor: activeTab === tab ? accent : "rgba(255,255,255,0.15)",
+              borderColor:
+                activeTab === tab ? accent : "rgba(255,255,255,0.15)",
             }}
           >
             {tab}
@@ -135,7 +136,7 @@ const InfluenceSection: React.FC = () => {
             max-width: 100%;
             height: auto;
             object-fit: contain;
-            display: block; /* Removes baseline white-space */
+            display: block;
           }
 
           .animate-fade-in {
@@ -154,31 +155,52 @@ const InfluenceSection: React.FC = () => {
               min-width: 100%;
               height: auto;
               min-height: auto;
-              padding: 60px 0 0 0; /* Bottom padding removed */
-              margin-bottom: -15px; /* Small negative margin to bridge sections */
+              padding: 60px 0 0 0;
+              margin-bottom: -15px;
             }
           }
 
           @media (max-width: 320px) {
             .influence-container {
-              margin-bottom: -10px; /* Adjusted for smaller screen */
+              margin-bottom: -20px;
+              padding-bottom: 0;
             }
-            .header-stack { margin-top: 40px; }
-            .influence-header { font-size: 28px; }
-            .influence-subtitle { font-size: 14px; padding: 0 20px; }
-            .tab-wrapper { 
-              margin-top: 24px;
-              overflow-x: auto; 
-              width: 100%; 
-              padding: 0 20px; 
+
+            .header-stack {
+              margin-top: 32px;
+              gap: 12px;
+            }
+
+            .influence-header {
+              font-size: 28px;
+            }
+
+            .influence-subtitle {
+              font-size: 14px;
+              padding: 0 16px;
+            }
+
+            .tab-wrapper {
+              margin-top: 20px;
+              overflow-x: auto;
+              width: 100%;
+              padding: 0 16px;
               justify-content: flex-start;
-              scrollbar-width: none; 
+              scrollbar-width: none;
             }
-            .tab-wrapper::-webkit-scrollbar { display: none; }
-            .tab-button { padding: 8px 16px; font-size: 10px; }
-            .asset-display-area { 
-              padding-top: 24px;
-              padding-bottom: 0px;
+
+            .tab-wrapper::-webkit-scrollbar {
+              display: none;
+            }
+
+            .tab-button {
+              padding: 8px 14px;
+              font-size: 10px;
+            }
+
+            .asset-display-area {
+              padding-top: 16px;
+              padding-bottom: 0;
             }
           }
         `}
