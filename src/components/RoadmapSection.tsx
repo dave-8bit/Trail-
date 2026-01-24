@@ -1,8 +1,10 @@
 import React from "react";
 import Line30 from "../assets/Line 30.png";
 import Phase1Img from "../assets/Phase 1.png";
-import Phase2Text from "../assets/Phase2Text.png"; // Phase 2 left card
-import Phase2Img from "../assets/Phase2.png";      // Phase 2 right image
+import Phase2Text from "../assets/Phase2Text.png";
+import Phase2Img from "../assets/Phase2.png";
+import Phase3Text from "../assets/phase3Text.png";
+import Phase3Img from "../assets/phase 3.png";
 
 const RoadmapSection: React.FC = () => {
   const accent = "#B4FF2C";
@@ -52,16 +54,16 @@ const RoadmapSection: React.FC = () => {
         Start here
       </button>
 
-      {/* LINE IMAGE */}
+      {/* LINE + PHASES */}
       <div
         style={{
           marginTop: 60,
-          position: "relative", // allows absolute positioning of cards/images
+          position: "relative",
           display: "flex",
           justifyContent: "center",
         }}
       >
-        {/* Line image */}
+        {/* Line */}
         <img
           src={Line30}
           alt="Line 30"
@@ -72,7 +74,7 @@ const RoadmapSection: React.FC = () => {
           }}
         />
 
-        {/* Phase 1 Text Card (Left) */}
+        {/* ===== PHASE 1 ===== */}
         <div
           style={{
             position: "absolute",
@@ -82,23 +84,19 @@ const RoadmapSection: React.FC = () => {
             height: 61,
             padding: 10,
             borderRadius: 8,
-            backgroundColor: "rgba(255, 255, 255, 0.05)",
+            backgroundColor: "rgba(255,255,255,0.05)",
             backdropFilter: "blur(10px)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             color: accent,
-            fontFamily: "'Blauer Neue', sans-serif",
             fontWeight: 600,
             fontSize: 14,
-            textAlign: "center",
-            opacity: 1,
           }}
         >
           PHASE 1 — IGNITION (NOW → Q1 2026)
         </div>
 
-        {/* Phase 1 Image Card (Right) */}
         <img
           src={Phase1Img}
           alt="Phase 1"
@@ -108,44 +106,66 @@ const RoadmapSection: React.FC = () => {
             right: 560,
             width: 345,
             height: 217,
-            objectFit: "cover",
             borderRadius: 8,
           }}
         />
 
-        {/* Phase 2 Text Card (Left) */}
+        {/* ===== PHASE 2 ===== */}
         <img
           src={Phase2Text}
           alt="Phase 2 Text"
           style={{
             position: "absolute",
-            top: 400, // adjust vertical spacing from Phase 1
+            top: 400,
             left: 180,
             width: 283,
             height: 61,
-            objectFit: "cover",
             borderRadius: 8,
           }}
         />
 
-        {/* Phase 2 Image Card (Right) */}
         <img
           src={Phase2Img}
           alt="Phase 2"
           style={{
             position: "absolute",
-            top: 400, // same vertical as left card
+            top: 400,
             right: 475,
             width: 427,
             height: 217.24,
-            objectFit: "cover",
+            borderRadius: 8,
+          }}
+        />
+
+        {/* ===== PHASE 3 ===== */}
+        <img
+          src={Phase3Text}
+          alt="Phase 3 Text"
+          style={{
+            position: "absolute",
+            top: 800,      // ⬅ both share this
+            left: 180,
+            width: 316,
+            height: 61,
+            borderRadius: 8,
+          }}
+        />
+
+        <img
+          src={Phase3Img}
+          alt="Phase 3"
+          style={{
+            position: "absolute",
+            top: 800,      // ⬅ SAME VALUE = perfect alignment
+            right: 475,
+            width: 427,
+            height: 262.42,
             borderRadius: 8,
           }}
         />
       </div>
 
-      {/* Empty space for future content */}
-      <div style={{ flex: 1, width: "100%" }} />
+      <div style={{ flex: 1 }} />
     </section>
   );
 };
