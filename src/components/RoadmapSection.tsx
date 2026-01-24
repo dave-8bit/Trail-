@@ -15,6 +15,8 @@ import Phase4Img from "../assets/phase 4.png";
 import Phase5Img from "../assets/phase 5.png";       // LEFT image
 import Phase5Text from "../assets/phase5Text.png";  // RIGHT text
 
+import Phase5bImg from "../assets/phase 5b.png"; // RIGHT-only image
+
 
 const RoadmapSection: React.FC = () => {
   const accent = "#B4FF2C";
@@ -233,6 +235,21 @@ const RoadmapSection: React.FC = () => {
     right: 620,      // ⬅ RIGHT side text
     width: 283,
     height: 61,
+    objectFit: "cover",
+    borderRadius: 8,
+  }}
+/>
+
+{/* ===== PHASE 5B (RIGHT ONLY) ===== */}
+<img
+  src={Phase5bImg}
+  alt="Phase 5b"
+  style={{
+    position: "absolute",
+    top: 1580,        // ⬅ slightly below Phase 5
+    right: -10,       // ⬅ same right alignment rhythm
+    width: 427,
+    height: 193.35,
     objectFit: "cover",
     borderRadius: 8,
   }}
