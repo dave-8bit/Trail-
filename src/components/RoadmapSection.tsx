@@ -18,6 +18,8 @@ import Phase5Text from "../assets/phase5Text.png";  // RIGHT text
 import Phase5bImg from "../assets/phase 5b.png"; // RIGHT-only image
 import Phase5bAltImg from "../assets/phase 5b (1).png";
 import Phase5bAlt2Img from "../assets/phase 5b (2).png";
+import Phase5bAlt3Img from "../assets/phase 5b (3).png";
+
 
 
 
@@ -281,6 +283,20 @@ const RoadmapSection: React.FC = () => {
     right: -10,       // ⬅ same right alignment
     width: 427,
     height: 127.18,
+    objectFit: "cover",
+    borderRadius: 8,
+  }}
+/>
+
+<img
+  src={Phase5bAlt3Img}
+  alt="Phase 5b Variant 3"
+  style={{
+    position: "absolute",
+    top: 2120,        // ⬅ continues the vertical flow
+    right: -10,       // ⬅ same alignment as other 5b items
+    width: 427,
+    height: 193.35,
     objectFit: "cover",
     borderRadius: 8,
   }}
