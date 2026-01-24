@@ -1,10 +1,20 @@
 import React from "react";
 import Line30 from "../assets/Line 30.png";
+
 import Phase1Img from "../assets/Phase 1.png";
+
 import Phase2Text from "../assets/Phase2Text.png";
 import Phase2Img from "../assets/Phase2.png";
+
 import Phase3Text from "../assets/phase3Text.png";
 import Phase3Img from "../assets/phase 3.png";
+
+import Phase4Text from "../assets/phase4Text.png";
+import Phase4Img from "../assets/phase 4.png";
+
+import Phase5Img from "../assets/phase 5.png";       // LEFT image
+import Phase5Text from "../assets/phase5Text.png";  // RIGHT text
+
 
 const RoadmapSection: React.FC = () => {
   const accent = "#B4FF2C";
@@ -23,7 +33,7 @@ const RoadmapSection: React.FC = () => {
         boxSizing: "border-box",
       }}
     >
-      {/* Header */}
+      {/* HEADER */}
       <h2
         style={{
           fontFamily: "'Blauer Neue', sans-serif",
@@ -37,7 +47,7 @@ const RoadmapSection: React.FC = () => {
         <span style={{ color: accent }}>Roadmap</span>
       </h2>
 
-      {/* Start Here Button */}
+      {/* START HERE BUTTON */}
       <button
         style={{
           backgroundColor: accent,
@@ -54,7 +64,7 @@ const RoadmapSection: React.FC = () => {
         Start here
       </button>
 
-      {/* LINE + PHASES */}
+      {/* LINE + PHASE CONTENT */}
       <div
         style={{
           marginTop: 60,
@@ -63,10 +73,10 @@ const RoadmapSection: React.FC = () => {
           justifyContent: "center",
         }}
       >
-        {/* Line */}
+        {/* LINE */}
         <img
           src={Line30}
-          alt="Line 30"
+          alt="Roadmap Line"
           style={{
             width: "1710px",
             height: "3100px",
@@ -90,6 +100,7 @@ const RoadmapSection: React.FC = () => {
             alignItems: "center",
             justifyContent: "center",
             color: accent,
+            fontFamily: "'Blauer Neue', sans-serif",
             fontWeight: 600,
             fontSize: 14,
           }}
@@ -106,6 +117,7 @@ const RoadmapSection: React.FC = () => {
             right: 560,
             width: 345,
             height: 217,
+            objectFit: "cover",
             borderRadius: 8,
           }}
         />
@@ -116,10 +128,11 @@ const RoadmapSection: React.FC = () => {
           alt="Phase 2 Text"
           style={{
             position: "absolute",
-            top: 400,
+            top: 320,
             left: 180,
             width: 283,
             height: 61,
+            objectFit: "cover",
             borderRadius: 8,
           }}
         />
@@ -129,10 +142,11 @@ const RoadmapSection: React.FC = () => {
           alt="Phase 2"
           style={{
             position: "absolute",
-            top: 400,
+            top: 320,
             right: 475,
             width: 427,
             height: 217.24,
+            objectFit: "cover",
             borderRadius: 8,
           }}
         />
@@ -143,10 +157,11 @@ const RoadmapSection: React.FC = () => {
           alt="Phase 3 Text"
           style={{
             position: "absolute",
-            top: 800,      // ⬅ both share this
+            top: 640,
             left: 180,
             width: 316,
             height: 61,
+            objectFit: "cover",
             borderRadius: 8,
           }}
         />
@@ -156,16 +171,76 @@ const RoadmapSection: React.FC = () => {
           alt="Phase 3"
           style={{
             position: "absolute",
-            top: 800,      // ⬅ SAME VALUE = perfect alignment
+            top: 640,
             right: 475,
             width: 427,
             height: 262.42,
+            objectFit: "cover",
             borderRadius: 8,
           }}
         />
+
+        {/* ===== PHASE 4 ===== */}
+        <img
+          src={Phase4Text}
+          alt="Phase 4 Text"
+          style={{
+            position: "absolute",
+            top: 1000,
+            left: 180,
+            width: 283,
+            height: 61,
+            objectFit: "cover",
+            borderRadius: 8,
+          }}
+        />
+
+        <img
+          src={Phase4Img}
+          alt="Phase 4"
+          style={{
+            position: "absolute",
+            top: 1000,
+            right: 475,
+            width: 427,
+            height: 242.42,
+            objectFit: "cover",
+            borderRadius: 8,
+          }}
+        />
+
+        {/* ===== PHASE 5 ===== */}
+<img
+  src={Phase5Img}
+  alt="Phase 5"
+  style={{
+    position: "absolute",
+    top: 1340,       // ⬅ same horizontal line
+    left: 35,       // ⬅ LEFT side image
+    width: 427,
+    height: 217.24,
+    objectFit: "cover",
+    borderRadius: 8,
+  }}
+/>
+
+<img
+  src={Phase5Text}
+  alt="Phase 5 Text"
+  style={{
+    position: "absolute",
+    top: 1340,       // ⬅ SAME top value
+    right: 620,      // ⬅ RIGHT side text
+    width: 283,
+    height: 61,
+    objectFit: "cover",
+    borderRadius: 8,
+  }}
+/>
       </div>
 
-      <div style={{ flex: 1 }} />
+      {/* PRESERVED EMPTY SPACE */}
+      <div style={{ flex: 1, width: "100%" }} />
     </section>
   );
 };
