@@ -19,7 +19,10 @@ import Phase5bImg from "../assets/phase 5b.png"; // RIGHT-only image
 import Phase5bAltImg from "../assets/phase 5b (1).png";
 import Phase5bAlt2Img from "../assets/phase 5b (2).png";
 import Phase5bAlt3Img from "../assets/phase 5b (3).png";
+import Phase5bAlt4Img from "../assets/phase 5b (4).png";
 
+import Phase6Text from "../assets/phase6Text.png"; // LEFT text
+import Phase6Img from "../assets/phase 6.png";     // RIGHT image
 
 
 
@@ -293,10 +296,53 @@ const RoadmapSection: React.FC = () => {
   alt="Phase 5b Variant 3"
   style={{
     position: "absolute",
-    top: 2120,        // ⬅ continues the vertical flow
+    top: 2070,        // ⬅ continues the vertical flow
     right: -10,       // ⬅ same alignment as other 5b items
     width: 427,
     height: 193.35,
+    objectFit: "cover",
+    borderRadius: 8,
+  }}
+/>
+
+<img
+  src={Phase5bAlt4Img}
+  alt="Phase 5b Variant 4"
+  style={{
+    position: "absolute",
+    top: 2275,        // ⬅ continues vertical flow from previous (2070 + 193.35 ≈ 2263)
+    right: -10,       // ⬅ same right alignment
+    width: 427,
+    height: 107.18,
+    objectFit: "cover",
+    borderRadius: 8,
+  }}
+/>
+
+{/* ===== PHASE 6 ===== */}
+<img
+  src={Phase6Text}
+  alt="Phase 6 Text"
+  style={{
+    position: "absolute",
+    top: 2592,       // vertical flow continuation
+    left: 170,       // LEFT alignment
+    width: 283,
+    height: 61,
+    objectFit: "cover",
+    borderRadius: 8,
+  }}
+/>
+
+<img
+  src={Phase6Img}
+  alt="Phase 6"
+  style={{
+    position: "absolute",
+    top: 2592,       // same top value
+    right: 455,      // RIGHT alignment rhythm
+    width: 427,
+    height: 221.71,
     objectFit: "cover",
     borderRadius: 8,
   }}
