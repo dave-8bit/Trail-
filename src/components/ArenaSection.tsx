@@ -1,4 +1,5 @@
 import React from "react";
+import badgeImg from "../assets/Badge.png";
 
 // Reusable Arrow Icon to match the UI
 const CornerArrow = ({ color = "#B4FF2C" }) => (
@@ -28,15 +29,25 @@ const ArenaSection: React.FC = () => {
 
       <div className="dashboard-content relative z-10">
         
-        {/* 2. TOP CARDS (Left Aligned Group) */}
-        <div className="arena-grid row-2 mb-12">
+        {/* 2. TOP CARDS - Fixed: 1296 x 368 (Matched to Image) */}
+        <div className="top-cards-fixed-row mb-12">
           {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="terminal-card">
-              <div className="flex items-center gap-2 mb-4">
-                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke={accent} strokeWidth="3"/></svg>
-                 <span className="user-handle">@TECHFLEXSG</span>
+            <div key={i} className="terminal-card testimonial-card flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-6">
+                {/* Arrow Icon from Image */}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke={accent} strokeWidth="3.5" strokeLinecap="square"/>
+                </svg>
+                
+                {/* User Avatar Placeholder */}
+                <div className="w-10 h-10 rounded-full bg-gray-800 border border-white/20 overflow-hidden flex-shrink-0">
+                  <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 opacity-70" />
+                </div>
+
+                <span className="user-handle text-lg tracking-wider">@TECHFLEXSG</span>
               </div>
-              <p className="body-text-accent">
+
+              <p className="body-text-accent leading-relaxed text-[17px]">
                 "Joined TRAIL waitlist for content angles. Day one: claimed first
                 puzzle fragment, documented the unlock sequence. Result: 23K
                 views on TikTok, 400+ waitlist signups through my referral code.
@@ -48,12 +59,12 @@ const ArenaSection: React.FC = () => {
 
         {/* 3. MID SECTION (Staggered/Right Aligned Group) */}
         <div className="flex flex-col items-end gap-10 mb-20">
-          {/* Badge Claim */}
-          <div className="terminal-card badge-claim-card border-accent relative">
+          {/* Badge Claim - Fixed: 752.01 x 314 */}
+          <div className="terminal-card badge-claim-fixed border-accent relative flex flex-col justify-center">
             <CornerArrow />
             <div className="flex gap-4">
-                <div className="w-16 h-16 bg-red-900/30 flex-shrink-0 flex items-center justify-center border border-red-500/50">
-                    <span className="text-2xl">🧩</span>
+                <div className="w-16 h-16 bg-black flex-shrink-0 border border-white/20 overflow-hidden">
+                    <img src={badgeImg} alt="Badge" className="w-full h-full object-cover grayscale" />
                 </div>
                 <div>
                     <h3 className="card-title">BADGE CLAIM TRANSMISSION</h3>
@@ -66,8 +77,8 @@ const ArenaSection: React.FC = () => {
             <p className="flex-link">WANT YOUR CLIP SPOTLIGHTED?</p>
           </div>
 
-          {/* Auction Logs */}
-          <div className="terminal-card auction-logs-card border-accent relative">
+          {/* Auction Logs - Fixed: 607 x 454.44 */}
+          <div className="terminal-card auction-logs-fixed border-accent relative flex flex-col justify-center">
             <CornerArrow />
             <h3 className="card-title flex items-center gap-2">
               <span className="text-xl">👑</span> AUCTION WIN LOGS
@@ -84,15 +95,15 @@ const ArenaSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 4. GLOBAL STANDINGS (Centered Full Width) */}
-        <div className="terminal-card w-full relative">
+        {/* 4. GLOBAL STANDINGS - Fixed: 1308 x 940.37 */}
+        <div className="terminal-card global-standings-fixed relative flex flex-col">
           <CornerArrow />
           <h2 className="card-title-white mb-2">GLOBAL STANDINGS</h2>
           <p className="body-text-accent-small mb-8">
             Rank +18 after Auction #3 — transmission timing made the difference. 2-hour advantage = positioning secured.
           </p>
 
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto flex-1">
             <table className="terminal-table">
               <thead>
                 <tr>
@@ -131,7 +142,6 @@ const ArenaSection: React.FC = () => {
           </div>
           <p className="footer-note-mono mt-6">STATS SHOWN: XP GAINS, AUCTION WINS, PUZZLE COMPLETIONS</p>
           
-          {/* Large decorative arrow in bottom right corner of table */}
           <div className="absolute bottom-4 right-4 opacity-40">
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke={accent} strokeWidth="2"/></svg>
           </div>
@@ -140,71 +150,64 @@ const ArenaSection: React.FC = () => {
 
       <style>
         {`
-          /* DESKTOP VIEW - PRESERVED FIXED DIMENSIONS */
-          @media (min-width: 1456px) {
-            .arena-container {
-                width: 1455px;
-                min-width: 1455px;
-                padding: 120px 80px;
-                margin: 0 auto;
-            }
-            .arena-grid.row-2 { grid-template-columns: repeat(2, 1fr); }
-            .badge-claim-card { width: 60%; }
-            .auction-logs-card { width: 50%; }
+          .arena-container {
+            width: 1455px; min-width: 1455px;
+            background-color: #0b0b0b; position: relative; overflow: hidden;
+            display: flex; flex-direction: column; align-items: center;
+            margin: 0 auto; box-sizing: border-box; padding: 120px 80px;
           }
 
-          /* SHARED BASE STYLES */
-          .arena-container {
-            background-color: #0b0b0b;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+          .dashboard-content { width: 100%; max-width: 1308px; }
+          .arena-header-wrapper { text-align: center; margin-bottom: 100px; width: 100%; position: relative; }
+
+          /* DIMENSIONS */
+          .top-cards-fixed-row { width: 1296px; height: 368px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+          .badge-claim-fixed { width: 752.01px; height: 314px; }
+          .auction-logs-fixed { width: 607px; height: 454.44px; }
+          .global-standings-fixed { width: 1308px; height: 940.37px; }
+
+          .testimonial-card {
+            border: 2px solid ${accent} !important; /* Matched to reference image */
+            border-radius: 4px;
+            padding: 40px !important;
+          }
+
+          .arena-main-title {
+            font-family: 'Blauer Neue', sans-serif; font-size: 64px; font-weight: 600;
+            color: #FFFFFF; line-height: 1.1;
+          }
+
+          .terminal-card {
+            background: #000; border: 1.5px solid ${accent}44;
+            padding: 35px; position: relative; box-shadow: inset 0 0 20px ${accent}05;
             box-sizing: border-box;
           }
 
-          .dashboard-content { width: 100%; max-width: 1250px; }
-          .arena-header-wrapper { text-align: center; margin-bottom: 100px; width: 100%; position: relative; }
-          .arena-main-title { font-family: 'Blauer Neue', sans-serif; font-size: 64px; font-weight: 600; color: #FFFFFF; line-height: 1.1; }
-          .arena-grid { display: grid; gap: 30px; }
-          .terminal-card { background: #000; border: 1.5px solid ${accent}44; padding: 35px; position: relative; box-shadow: inset 0 0 20px ${accent}05; }
-          .user-handle { font-family: 'Blauer Neue', sans-serif; font-weight: 800; color: #fff; font-size: 14px; }
-          .body-text-accent { color: ${accent}; font-family: 'Blauer Neue', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5; }
+          .user-handle { font-family: 'Blauer Neue', sans-serif; font-weight: 800; color: #fff; }
+          .body-text-accent { color: ${accent}; font-family: 'Blauer Neue', sans-serif; font-weight: 400; }
           .body-text-accent-small { color: ${accent}; font-family: 'Blauer Neue', sans-serif; font-size: 14px; font-weight: 300; }
           .body-text-gray { color: #888; font-family: 'Blauer Neue', sans-serif; font-size: 13px; margin-top: 8px; }
           .card-title { color: ${accent}; font-family: 'Blauer Neue', sans-serif; font-weight: 700; font-size: 22px; }
           .card-title-white { color: #fff; font-family: 'Blauer Neue', sans-serif; font-weight: 700; font-size: 24px; text-transform: uppercase; }
+
           .log-list-mono { list-style: none; padding: 0; margin-top: 25px; font-family: ui-monospace, monospace; font-size: 13px; color: ${accent}; }
           .log-list-mono li { margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px; }
           .log-list-mono .label { color: #666; margin-right: 10px; }
           .log-list-mono .value-highlight { background: ${accent}; color: #000; padding: 0 4px; font-weight: bold; }
+
           .terminal-table { width: 100%; border-collapse: collapse; }
           .terminal-table th { color: ${accent}; text-align: left; padding: 15px 10px; border-bottom: 2px solid ${accent}44; font-size: 12px; font-weight: 900; }
-          .terminal-table td { color: #fff; padding: 18px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; }
+          .terminal-table td { color: #fff; padding: 25px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 16px; }
+
           .footer-note-mono { font-family: ui-monospace, monospace; color: #444; font-size: 10px; letter-spacing: 1px; }
-          .flex-link { margin-top: 20px; color: ${accent}; font-size: 11px; font-weight: 900; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+          .flex-link { margin-top: 20px; color: ${accent}; font-size: 11px; font-weight: 900; text-decoration: underline; cursor: pointer; }
 
-          /* RESPONSIVE VIEW (Up to Desktop) */
           @media (max-width: 1455px) {
-            .arena-container { width: 100%; min-width: 100%; padding: 60px 20px; }
-            .arena-grid.row-2 { grid-template-columns: 1fr; }
-            .arena-main-title { font-size: 42px; }
-            .terminal-card { width: 100% !important; padding: 25px; }
-            .arena-header-wrapper { margin-bottom: 50px; }
-          }
-
-          /* TARGETED 320PX MOBILE RESPONSIVENESS */
-          @media (max-width: 320px) {
-            .arena-main-title { font-size: 28px; }
-            .terminal-card { padding: 15px; }
-            .card-title { font-size: 16px; }
-            .body-text-accent { font-size: 14px; }
-            .user-handle { font-size: 12px; }
-            .log-list-mono { font-size: 11px; }
-            .terminal-table td, .terminal-table th { font-size: 10px; padding: 8px 4px; }
-            .arena-grid { gap: 15px; }
-            .mb-12, .mb-20 { margin-bottom: 30px !important; }
+            .arena-container, .top-cards-fixed-row, .badge-claim-fixed, .auction-logs-fixed, .global-standings-fixed {
+              width: 100% !important; min-width: 100% !important; height: auto !important; min-height: 0 !important;
+            }
+            .top-cards-fixed-row { grid-template-columns: 1fr; }
+            .arena-main-title { font-size: 38px; }
           }
         `}
       </style>

@@ -4,7 +4,8 @@ import SimulationSection from '../components/SimulationSection';
 import MembersSeeSection from '../components/MembersSeeSection';
 import PlaybookSection from '../components/PlaybookSection';
 import InfluenceSection from '../components/InfluenceSection';
-import ArenaSection from '../components/ArenaSection'; // New Import
+import ArenaSection from '../components/ArenaSection';
+import RoadmapSection from '../components/RoadmapSection'; // New Import
 
 const Home = () => {
   return (
@@ -12,17 +13,16 @@ const Home = () => {
       <div className="mx-auto max-w-[1455px] flex flex-col">
         <Navigation />
         <HeroSection />
-        
         <SimulationSection />
-        
         <MembersSeeSection />
-
         <PlaybookSection />
-
         <InfluenceSection />
-
+        
         {/* Rendered as 1455px width by 2711px height */}
         <ArenaSection />
+
+        {/* Rendered as 1455px width by 3549px height */}
+        <RoadmapSection />
       </div>
     </main>
   );
