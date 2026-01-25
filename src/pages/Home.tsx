@@ -5,9 +5,13 @@ import MembersSeeSection from '../components/MembersSeeSection';
 import PlaybookSection from '../components/PlaybookSection';
 import InfluenceSection from '../components/InfluenceSection';
 import ArenaSection from '../components/ArenaSection';
-import RoadmapSection from '../components/RoadmapSection'; // New Import
+import RoadmapSection from '../components/RoadmapSection'; 
+import Footer from '../components/Footer';
 
 const Home = () => {
+  // Define the accent color here so you can pass it down
+  const accentColor = "#B4FF2C";
+
   return (
     <main className="w-full bg-[#0b0b0b] overflow-x-hidden min-h-screen">
       <div className="mx-auto max-w-[1455px] flex flex-col">
@@ -18,11 +22,12 @@ const Home = () => {
         <PlaybookSection />
         <InfluenceSection />
         
-        {/* Rendered as 1455px width by 2711px height */}
         <ArenaSection />
 
-        {/* Rendered as 1455px width by 3549px height */}
         <RoadmapSection />
+
+        {/* Pass the accent prop here to resolve the TypeScript error */}
+        <Footer accent={accentColor} />
       </div>
     </main>
   );
