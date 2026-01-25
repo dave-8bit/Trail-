@@ -2,29 +2,21 @@ import React from "react";
 import Line30 from "../assets/Line 30.png";
 
 import Phase1Img from "../assets/Phase 1.png";
-
 import Phase2Text from "../assets/Phase2Text.png";
 import Phase2Img from "../assets/Phase2.png";
-
 import Phase3Text from "../assets/phase3Text.png";
 import Phase3Img from "../assets/phase 3.png";
-
 import Phase4Text from "../assets/phase4Text.png";
 import Phase4Img from "../assets/phase 4.png";
-
-import Phase5Img from "../assets/phase 5.png";       // LEFT image
-import Phase5Text from "../assets/phase5Text.png";  // RIGHT text
-
-import Phase5bImg from "../assets/phase 5b.png"; // RIGHT-only image
+import Phase5Img from "../assets/phase 5.png";
+import Phase5Text from "../assets/phase5Text.png";
+import Phase5bImg from "../assets/phase 5b.png";
 import Phase5bAltImg from "../assets/phase 5b (1).png";
 import Phase5bAlt2Img from "../assets/phase 5b (2).png";
 import Phase5bAlt3Img from "../assets/phase 5b (3).png";
 import Phase5bAlt4Img from "../assets/phase 5b (4).png";
-
-import Phase6Text from "../assets/phase6Text.png"; // LEFT text
-import Phase6Img from "../assets/phase 6.png";     // RIGHT image
-
-
+import Phase6Text from "../assets/phase6Text.png";
+import Phase6Img from "../assets/phase 6.png";
 
 const RoadmapSection: React.FC = () => {
   const accent = "#B4FF2C";
@@ -33,7 +25,7 @@ const RoadmapSection: React.FC = () => {
     <section
       style={{
         width: "1455px",
-        height: "3549px",
+        minHeight: "3600px",
         backgroundColor: "#0b0b0b",
         display: "flex",
         flexDirection: "column",
@@ -41,6 +33,7 @@ const RoadmapSection: React.FC = () => {
         justifyContent: "flex-start",
         paddingTop: 20,
         boxSizing: "border-box",
+        position: "relative", // so absolute children are relative to this container
       }}
     >
       {/* HEADER */}
@@ -220,134 +213,197 @@ const RoadmapSection: React.FC = () => {
         />
 
         {/* ===== PHASE 5 ===== */}
-<img
-  src={Phase5Img}
-  alt="Phase 5"
-  style={{
-    position: "absolute",
-    top: 1340,       // ⬅ same horizontal line
-    left: 35,       // ⬅ LEFT side image
-    width: 427,
-    height: 217.24,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
+        <img
+          src={Phase5Img}
+          alt="Phase 5"
+          style={{
+            position: "absolute",
+            top: 1340,
+            left: 35,
+            width: 427,
+            height: 217.24,
+            objectFit: "cover",
+            borderRadius: 8,
+          }}
+        />
 
-<img
-  src={Phase5Text}
-  alt="Phase 5 Text"
-  style={{
-    position: "absolute",
-    top: 1340,       // ⬅ SAME top value
-    right: 620,      // ⬅ RIGHT side text
-    width: 283,
-    height: 61,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
+        <img
+          src={Phase5Text}
+          alt="Phase 5 Text"
+          style={{
+            position: "absolute",
+            top: 1340,
+            right: 620,
+            width: 283,
+            height: 61,
+            objectFit: "cover",
+            borderRadius: 8,
+          }}
+        />
 
-{/* ===== PHASE 5B (RIGHT ONLY) ===== */}
-<img
-  src={Phase5bImg}
-  alt="Phase 5b"
-  style={{
-    position: "absolute",
-    top: 1480,        // ⬅ slightly below Phase 5
-    right: -10,       // ⬅ same right alignment rhythm
-    width: 427,
-    height: 193.35,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
+        {/* ===== PHASE 5B (RIGHT ONLY) ===== */}
+        {[Phase5bImg, Phase5bAltImg, Phase5bAlt2Img, Phase5bAlt3Img, Phase5bAlt4Img].map(
+          (imgSrc, index) => (
+            <img
+              key={index}
+              src={imgSrc}
+              alt={`Phase 5b Variant ${index + 1}`}
+              style={{
+                position: "absolute",
+                top:
+                  1480 +
+                  index * (index === 4 ? 107.18 : index === 2 ? 127.18 : index === 1 ? 213.35 : 193.35),
+                right: -10,
+                width: 427,
+                height:
+                  index === 4
+                    ? 107.18
+                    : index === 2
+                    ? 127.18
+                    : index === 1
+                    ? 213.35
+                    : 193.35,
+                objectFit: "cover",
+                borderRadius: 8,
+              }}
+            />
+          )
+        )}
 
-<img
-  src={Phase5bAltImg}
-  alt="Phase 5b Variant"
-  style={{
-    position: "absolute",
-    top: 1700,          // ✅ SAME vertical distance
-    right: -10,         // ⬅ shifted left so they sit side-by-side
-    width: 427,
-    height: 213.35,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
+        {/* ===== PHASE 6 ===== */}
+        <img
+          src={Phase6Text}
+          alt="Phase 6 Text"
+          style={{
+            position: "absolute",
+            top: 2592,
+            left: 170,
+            width: 283,
+            height: 61,
+            objectFit: "cover",
+            borderRadius: 8,
+          }}
+        />
 
-<img
-  src={Phase5bAlt2Img}
-  alt="Phase 5b Variant 2"
-  style={{
-    position: "absolute",
-    top: 1920,        // ⬅ continues vertical flow cleanly
-    right: -10,       // ⬅ same right alignment
-    width: 427,
-    height: 127.18,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
+        <img
+          src={Phase6Img}
+          alt="Phase 6"
+          style={{
+            position: "absolute",
+            top: 2592,
+            right: 455,
+            width: 427,
+            height: 221.71,
+            objectFit: "cover",
+            borderRadius: 8,
+          }}
+        />
 
-<img
-  src={Phase5bAlt3Img}
-  alt="Phase 5b Variant 3"
-  style={{
-    position: "absolute",
-    top: 2070,        // ⬅ continues the vertical flow
-    right: -10,       // ⬅ same alignment as other 5b items
-    width: 427,
-    height: 193.35,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
-
-<img
-  src={Phase5bAlt4Img}
-  alt="Phase 5b Variant 4"
-  style={{
-    position: "absolute",
-    top: 2275,        // ⬅ continues vertical flow from previous (2070 + 193.35 ≈ 2263)
-    right: -10,       // ⬅ same right alignment
-    width: 427,
-    height: 107.18,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
-
-{/* ===== PHASE 6 ===== */}
-<img
-  src={Phase6Text}
-  alt="Phase 6 Text"
-  style={{
-    position: "absolute",
-    top: 2592,       // vertical flow continuation
-    left: 170,       // LEFT alignment
-    width: 283,
-    height: 61,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
-
-<img
-  src={Phase6Img}
-  alt="Phase 6"
-  style={{
-    position: "absolute",
-    top: 2592,       // same top value
-    right: 455,      // RIGHT alignment rhythm
-    width: 427,
-    height: 221.71,
-    objectFit: "cover",
-    borderRadius: 8,
-  }}
-/>
+        {/* ===== FUTURE BUTTON ===== */}
+        <button
+          style={{
+            position: "absolute",
+            top: 3110, // leave room for nudging
+            left: 270, // adjustable later
+            width: 362,
+            height: 37,
+            backgroundColor: "#A8E04F",
+            color: "#000000",
+            fontFamily: "'CS Liona Mono', monospace",
+            fontSize: 24,
+            lineHeight: "37px", // vertical centering
+            border: "none",
+            borderRadius: 4,
+            cursor: "pointer",
+            textAlign: "center",
+            transition: "all 0.2s ease-in-out",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+        >
+          The Future continues here
+        </button>
       </div>
+{/* ==== BEGINNING SECTION CTA ==== */}
+<div
+  style={{
+    position: "absolute", // so you can nudge with top & left
+    top: 3150,           // adjustable later
+    left: 690,           // adjustable later
+    width: 590,
+    height: 265,
+    backgroundColor: "#0B0B0B",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    borderRadius: 12,    // optional, smooth edges
+    padding: 16,         // internal padding
+    boxSizing: "border-box",
+  }}
+>
+  <h2
+    style={{
+      fontFamily: "'Blauer Neue', sans-serif",
+      fontWeight: 700,
+      fontSize: 28,
+      color: "#fff",
+      marginBottom: 12,
+    }}
+  >
+    This is only the beginning.
+  </h2>
+  <p
+    style={{
+      fontFamily: "'CS Liona Mono', monospace",
+      fontSize: 14,
+      color: "#B2B2B2",
+      marginBottom: 20,
+    }}
+  >
+    Join the next phase of TRAIL.
+  </p>
+
+  <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
+    <button
+      style={{
+        padding: "10px 24px",
+        borderRadius: 8,
+        fontWeight: 700,
+        fontFamily: "'CS Liona Mono', monospace",
+        fontSize: 16,
+        backgroundColor: "#B4FF2C",
+        color: "#000",
+        cursor: "pointer",
+        transition: "all 0.2s ease-in-out",
+      }}
+      onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+      onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+    >
+      Begin Your Run
+    </button>
+    <button
+      style={{
+        padding: "10px 24px",
+        borderRadius: 8,
+        fontWeight: 700,
+        fontFamily: "'CS Liona Mono', monospace",
+        fontSize: 16,
+        backgroundColor: "transparent",
+        border: "1px solid #B4FF2C",
+        color: "#fff",
+        cursor: "pointer",
+        transition: "all 0.2s ease-in-out",
+      }}
+      onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+      onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+    >
+      Become a Creator
+    </button>
+  </div>
+</div>
+
 
       {/* PRESERVED EMPTY SPACE */}
       <div style={{ flex: 1, width: "100%" }} />
