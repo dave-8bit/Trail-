@@ -339,8 +339,8 @@ const RoadmapSection: React.FC = () => {
 
       {/* ==== BEGINNING SECTION CTA ==== */}
       <div style={{ position: "absolute", top: 3150, left: 690, width: 590, height: 265, backgroundColor: "#0B0B0B", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", borderRadius: 12, padding: 16, boxSizing: "border-box" }}>
-        <h2 style={{ fontFamily: "'Blauer Neue', sans-serif", fontWeight: 700, fontSize: 36, color: "#fff", marginBottom: 12 }}>This is only the beginning.</h2>
-        <p style={{ fontFamily: "'CS Liona Mono', monospace", fontSize: 18, color: "#B2B2B2", marginBottom: 20 }}>Join the next phase of TRAIL.</p>
+        <h2 style={{ fontFamily: "'Blauer Neue', sans-serif", fontWeight: 700, fontSize: 34, color: "#fff", marginBottom: 12 }}>This is only the beginning.</h2>
+        <p style={{ fontFamily: "'CS Liona Mono', monospace", fontSize: 12, color: "#B2B2B2", marginBottom: 20 }}>Join the next phase of TRAIL.</p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
           <button style={{ padding: "10px 24px", borderRadius: 8, fontWeight: 700, fontFamily: "'CS Liona Mono', monospace", fontSize: 16, backgroundColor: "#B4FF2C", color: "#000", border: "none" }}>Begin Your Run</button>
           <button style={{ padding: "10px 24px", borderRadius: 8, fontWeight: 700, fontFamily: "'CS Liona Mono', monospace", fontSize: 16, backgroundColor: "transparent", border: "1px solid #B4FF2C", color: "#fff" }}>Become a Creator</button>
